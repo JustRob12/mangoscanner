@@ -9,7 +9,9 @@ type PredictionResult = {
   quality_grade: string;
 };
 
-const API_URL = "https://mango-ann-api.onrender.com/predict";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ??
+  "https://mango-ann-api.onrender.com/predict";
 
 export default function Home() {
   const [imageFile, setImageFile] = useState<File | null>(null);
